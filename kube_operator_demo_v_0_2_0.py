@@ -47,7 +47,7 @@ with dag:
         dag=dag,
     )
 
-    rArgs="\'print('Hello world from R)\'"
+    rArgs="\'print(\"Hello world from R\")\'"
     pt3 = KubernetesPodOperator(
         task_id="pt3",
         in_cluster=True,
