@@ -51,9 +51,9 @@ with dag:
         task_id="pt3",
         in_cluster=True,
         namespace="airflow",
-        image="r-base:4.0.2",
+        image="eu.gcr.io/service-project-gke-c830/mc-demo:latest",
         cmds=['bash','-c'],
-        arguments=["Rscript", "--version"],
+        arguments=["Rscript", "monte-carlo.R"],
         name="pod-pt3",
         dag=dag,
     )
