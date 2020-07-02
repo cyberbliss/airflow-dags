@@ -47,13 +47,14 @@ with dag:
         dag=dag,
     )
 
+    rArgs="'print(\"Hello world from R\")'"
     pt3 = KubernetesPodOperator(
         task_id="pt3",
         in_cluster=True,
         namespace="airflow",
         image="r-base:4.0.2",
         cmds=['bash','-c'],
-        arguments=["Rscript", "-e", "\"print(\"hello world from R\")\""],
+        arguments=["Rscript", "-e", rArgs],
         name="pod-pt3",
         dag=dag,
     )
