@@ -53,7 +53,7 @@ with dag:
         namespace="airflow",
         image="r-base:4.0.2",
         cmds=['bash','-c'],
-        arguments=["Rscript", "-e", "\\'print(\"hello world from R\")\\'"],
+        arguments=["Rscript", "-e", "\'print(\"hello world from R\")\'"],
         name="pod-pt3",
         dag=dag,
     )
