@@ -42,10 +42,21 @@ with dag:
         namespace="airflow",
         image="python:3.7",
         cmds=['python','-c'],
-        arguments=["print('hello world')"],
+        arguments=["print('hello world from Python')"],
         name="pod-pt2",
         dag=dag,
     )
 
-    pt1 >> pt2
+    pt3 = KubernetesPodOperator(
+        task_id="pt3",
+        in_cluster=True,
+        namespace="airflow",
+        image="r-base:4.0.2",
+        cmds=['bash','-c'],
+        arguments=["Rscript", "-e", "'print(\"hello world from R\")'"],
+        name="pod-pt3",
+        dag=dag,
+    )
+
+    pt1 >> [pt2,pt3]
 
