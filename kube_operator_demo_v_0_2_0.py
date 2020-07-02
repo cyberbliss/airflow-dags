@@ -53,7 +53,7 @@ with dag:
         namespace="airflow",
         image="eu.gcr.io/service-project-gke-c830/mc-demo:latest",
         cmds=['bash','-c'],
-        arguments=["Rscript", "monte-carlo.R"],
+        arguments=["Rscript monte-carlo.R"],
         name="pod-pt3",
         dag=dag,
     )
