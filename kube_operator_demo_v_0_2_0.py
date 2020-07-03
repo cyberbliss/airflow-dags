@@ -22,6 +22,7 @@ dag = DAG(
     default_args=default_args,
     description='A simple DAG to demo the Kube operator',
     schedule_interval=None,
+    tags=['PHE'],
 )
 
 with dag:

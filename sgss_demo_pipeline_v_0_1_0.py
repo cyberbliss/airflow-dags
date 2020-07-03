@@ -22,6 +22,7 @@ dag = DAG(
     default_args=default_args,
     description='A DAG to demo an SGSS pipeline',
     schedule_interval=None,
+    tags=['PHE'],
 )
 
 with dag:
